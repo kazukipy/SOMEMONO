@@ -1,0 +1,26 @@
+<!-- somemono_app/templates/somemono_app/delivery_receipt_list.html -->
+<h1>納品書一覧</h1>
+<table>
+    <thead>
+        <tr>
+            <th>注文者名</th>
+            <th>注文番号</th>
+            <th>品名・品番</th>
+            <th>単価</th>
+            <th>数量</th>
+            <th>金額</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for receipt in receipts %}
+        <tr>
+            <td>{{ receipt.orderer_name }}</td>
+            <td>{{ receipt.order_number }}</td>
+            <td>{{ receipt.item_name }} ({{ receipt.item_number }})</td>
+            <td>{{ receipt.unit_price }}</td>
+            <td>{{ receipt.quantity }}</td>
+            <td>{{ receipt.total_amount }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
